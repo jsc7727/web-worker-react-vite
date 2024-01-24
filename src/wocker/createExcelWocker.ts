@@ -1,5 +1,8 @@
 import { utils, write } from 'xlsx';
 
+
+
+
 type ExcelType = {
   id: {
     bioguide: string;
@@ -24,6 +27,7 @@ type ExcelType = {
 self.onmessage = async (e) => {
   console.log(e);
   const url = e?.data?.url;
+  // const { utils, write } = getXlsx();
   if (url) {
     const raw_data: ExcelType[] = await (await fetch(url)).json();
     /* filter for the Presidents */
